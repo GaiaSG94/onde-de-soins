@@ -1,0 +1,45 @@
+{
+  "name": "onde-de-soins",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Carte des déserts médicaux — temps de trajet routier vers les soins",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "start:prod": "node server/standalone.mjs",
+    "typecheck": "tsc -b --pretty false",
+    "lint": "eslint . --max-warnings 0",
+    "data:fetch": "tsx scripts/fetch-sources.ts",
+    "data:demo": "tsx scripts/build-demo-data.ts",
+    "precompute": "tsx scripts/precompute.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@deck.gl/core": "^9.1.14",
+    "@deck.gl/layers": "^9.1.14",
+    "@deck.gl/mapbox": "^9.1.14",
+    "@turf/turf": "^7.2.0",
+    "maplibre-gl": "^5.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.17.2",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "dotenv": "^17.2.1",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "tsx": "^4.20.4",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.4"
+  }
+}

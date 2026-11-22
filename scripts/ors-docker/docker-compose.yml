@@ -1,0 +1,17 @@
+services:
+  ors:
+    image: gisops/openrouteservice:latest
+    container_name: ors-onde-de-soins
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+    environment:
+      - ORS_CONFIG_LOCATION=/ors-config/config.yml
+    volumes:
+      - ./ors-config:/ors-config:ro
+      - ./ors-data:/ors-data
+      - ors-elevation:/elevation_cache
+    shm_size: 1gb
+
+volumes:
+  ors-elevation:
